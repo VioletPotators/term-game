@@ -9,7 +9,7 @@ with open(r'C:\Users\Artur Besen\Desktop\term-game\term-game\backend\word-list\w
 
 
 
-correct_word = "oucas"#random.choice(words)
+correct_word = random.choice(words)
 remaining_tries = 6     
 print("Term game, guess the word")
 while remaining_tries > 0:
@@ -59,9 +59,20 @@ while remaining_tries > 0:
                 amount_correct[letter] -= 1
                 continue
             final_check[letter + str(i)] = "none"
+            
+        final_list = []
+        for letter_index, color in final_check.items():
+            letter = letter_index[0]
+            if color == "yellow":
+                final_list.append(f"\033[0;36m{letter}\033[0m")
+            elif color == "green":
+                final_list.append(f"\033[0;32m{letter}\033[0m")
+            else:
+                final_list.append(letter)
 
 
-        print("".join(final_check))
+
+        print("".join(final_list))
         remaining_tries -= 1
         
 
