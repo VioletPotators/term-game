@@ -34,19 +34,6 @@ def guess():
         'result': result
     })
 
-@app.route('/api/data', methods=['GET'])
-def get_data():
-    return jsonify({
-        'message': 'Hello from Flask API!',
-        'data': [1, 2, 3, 4, 5]
-    })
-
-@app.route('/api/about', methods=['GET'])
-def about():
-    return jsonify({
-        'title': 'About',
-        'description': 'This is a full-stack application with Flask and React'
-    })
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

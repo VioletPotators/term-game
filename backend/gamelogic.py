@@ -13,7 +13,7 @@ class Game:
     remaining_tries = 0
     letters_used = []
 
-    def __init__(self) -> None:
+    def __init__(self):
         self.correct_word = self.choose_word()
         self.remaining_tries = 5
 
